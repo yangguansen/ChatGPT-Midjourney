@@ -31,11 +31,29 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* <!-- Google Tag Manager --> */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=GTM-PQFRBKQD"></script>
+        <script dangerouslySetInnerHTML={{
+          __html:`
+                        window.dataLayer = window.dataLayer || [];
+                        function gtag(){dataLayer.push(arguments);}
+                        gtag('js', new Date());
+                      
+                        gtag('config', 'GTM-PQFRBKQD');
+                        `,
+        }} />
+        {/* <!-- End Google Tag Manager -->  */}
         <meta name="config" content={JSON.stringify(getClientConfig())} />
         <link rel="manifest" href="/site.webmanifest"></link>
         <script src="/serviceWorkerRegister.js" defer></script>
       </head>
-      <body>{children}</body>
+      <body>
+      {/* <!-- Google Tag Manager (noscript) --> */}
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PQFRBKQD"
+                        height="0" width="0" style={{display:'none',visibility:'hidden'}}></iframe></noscript>
+      {/* <!-- End Google Tag Manager (noscript) --> */}
+      {children}
+      </body>
     </html>
   );
 }
