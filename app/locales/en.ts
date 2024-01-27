@@ -108,7 +108,7 @@ const en: LocaleType = {
       if (submitKey === String(SubmitKey.Enter)) {
         inputHints += ", Shift + Enter to wrap";
       }
-      return inputHints + ", /mj + prompt to create image";
+      return inputHints + ', /mj + prompt to create image, such as: "/mj a little cute cat"';
     },
     Send: "Send",
     Config: {
