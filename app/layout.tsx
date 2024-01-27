@@ -32,14 +32,14 @@ export default function RootLayout({
     <html lang="en">
       <head>
         {/* <!-- Google Tag Manager --> */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=GTM-PQFRBKQD"></script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-GVG5X1MEG5"></script>
         <script dangerouslySetInnerHTML={{
           __html:`
                         window.dataLayer = window.dataLayer || [];
                         function gtag(){dataLayer.push(arguments);}
                         gtag('js', new Date());
                       
-                        gtag('config', 'GTM-PQFRBKQD');
+                        gtag('config', 'G-GVG5X1MEG5');
                         `,
         }} />
         {/* <!-- End Google Tag Manager -->  */}
@@ -48,10 +48,6 @@ export default function RootLayout({
         <script src="/serviceWorkerRegister.js" defer></script>
       </head>
       <body>
-      {/* <!-- Google Tag Manager (noscript) --> */}
-      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PQFRBKQD"
-                        height="0" width="0" style={{display:'none',visibility:'hidden'}}></iframe></noscript>
-      {/* <!-- End Google Tag Manager (noscript) --> */}
       {children}
       </body>
     </html>
