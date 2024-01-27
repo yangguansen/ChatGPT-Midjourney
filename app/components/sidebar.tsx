@@ -128,22 +128,22 @@ export function SideBar(props: { className?: string }) {
         </div>
       </div>
 
-      <div className={styles["sidebar-header-bar"]}>
-        <IconButton
-          icon={<MaskIcon />}
-          text={shouldNarrow ? undefined : Locale.Mask.Name}
-          className={styles["sidebar-bar-button"]}
-          onClick={() => navigate(Path.NewChat, { state: { fromHome: true } })}
-          shadow
-        />
-        <IconButton
-          icon={<GemIcon />}
-          text={shouldNarrow ? undefined : "Pro"}
-          className={styles["sidebar-bar-button"]}
-          onClick={() => window.open(REPO_URL + "-Pro", "_blank")}
-          shadow
-        />
-      </div>
+      {/*<div className={styles["sidebar-header-bar"]}>*/}
+      {/*  <IconButton*/}
+      {/*    icon={<MaskIcon />}*/}
+      {/*    text={shouldNarrow ? undefined : Locale.Mask.Name}*/}
+      {/*    className={styles["sidebar-bar-button"]}*/}
+      {/*    onClick={() => navigate(Path.NewChat, { state: { fromHome: true } })}*/}
+      {/*    shadow*/}
+      {/*  />*/}
+      {/*  <IconButton*/}
+      {/*    icon={<GemIcon />}*/}
+      {/*    text={shouldNarrow ? undefined : "Pro"}*/}
+      {/*    className={styles["sidebar-bar-button"]}*/}
+      {/*    onClick={() => window.open(REPO_URL + "-Pro", "_blank")}*/}
+      {/*    shadow*/}
+      {/*  />*/}
+      {/*</div>*/}
 
       <div
         className={styles["sidebar-body"]}
@@ -168,16 +168,16 @@ export function SideBar(props: { className?: string }) {
               }}
             />
           </div>
-          <div className={styles["sidebar-action"]}>
-            <Link to={Path.Settings}>
-              <IconButton icon={<SettingsIcon />} shadow />
-            </Link>
-          </div>
-          <div className={styles["sidebar-action"]}>
-            <a href={REPO_URL} target="_blank">
-              <IconButton icon={<GithubIcon />} shadow />
-            </a>
-          </div>
+          {/*<div className={styles["sidebar-action"]}>*/}
+          {/*  <Link to={Path.Settings}>*/}
+          {/*    <IconButton icon={<SettingsIcon />} shadow />*/}
+          {/*  </Link>*/}
+          {/*</div>*/}
+          {/*<div className={styles["sidebar-action"]}>*/}
+          {/*  <a href={REPO_URL} target="_blank">*/}
+          {/*    <IconButton icon={<GithubIcon />} shadow />*/}
+          {/*  </a>*/}
+          {/*</div>*/}
         </div>
         <div>
           <IconButton

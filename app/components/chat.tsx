@@ -212,6 +212,7 @@ function useSubmitHandler() {
         if (e.key !== "Enter") return false;
         if (e.key === "Enter" && (e.nativeEvent.isComposing || isComposing.current))
             return false;
+
         return (
             (config.submitKey === SubmitKey.AltEnter && e.altKey) ||
             (config.submitKey === SubmitKey.CtrlEnter && e.ctrlKey) ||
@@ -484,13 +485,13 @@ export function ChatActions(props: {
                     icon={<BottomIcon/>}
                 />
             )}
-            {props.hitBottom && (
-                <ChatAction
-                    onClick={props.showPromptModal}
-                    text={Locale.Chat.InputActions.Settings}
-                    icon={<SettingsIcon/>}
-                />
-            )}
+            {/*{props.hitBottom && (*/}
+            {/*    <ChatAction*/}
+            {/*        onClick={props.showPromptModal}*/}
+            {/*        text={Locale.Chat.InputActions.Settings}*/}
+            {/*        icon={<SettingsIcon/>}*/}
+            {/*    />*/}
+            {/*)}*/}
 
             <ChatAction
                 onClick={nextTheme}
@@ -508,19 +509,19 @@ export function ChatActions(props: {
                 }
             />
 
-            <ChatAction
-                onClick={props.showPromptHints}
-                text={Locale.Chat.InputActions.Prompt}
-                icon={<PromptIcon/>}
-            />
+            {/*<ChatAction*/}
+            {/*    onClick={props.showPromptHints}*/}
+            {/*    text={Locale.Chat.InputActions.Prompt}*/}
+            {/*    icon={<PromptIcon/>}*/}
+            {/*/>*/}
 
-            <ChatAction
-                onClick={() => {
-                    navigate(Path.Masks);
-                }}
-                text={Locale.Chat.InputActions.Masks}
-                icon={<MaskIcon/>}
-            />
+            {/*<ChatAction*/}
+            {/*    onClick={() => {*/}
+            {/*        navigate(Path.Masks);*/}
+            {/*    }}*/}
+            {/*    text={Locale.Chat.InputActions.Masks}*/}
+            {/*    icon={<MaskIcon/>}*/}
+            {/*/>*/}
 
             <ChatAction
                 text={Locale.Chat.InputActions.Clear}
@@ -537,11 +538,11 @@ export function ChatActions(props: {
                 }}
             />
 
-            <ChatAction
-                onClick={() => setShowModelSelector(true)}
-                text={currentModel}
-                icon={<RobotIcon/>}
-            />
+            {/*<ChatAction*/}
+            {/*    onClick={() => setShowModelSelector(true)}*/}
+            {/*    text={currentModel}*/}
+            {/*    icon={<RobotIcon/>}*/}
+            {/*/>*/}
 
             <ChatAction
                 onClick={selectImage}
@@ -730,6 +731,7 @@ function _Chat() {
     };
 
     const doSubmit = async (userInput: string, extAttr?: any) => {
+        console.log(111, userInput, extAttr);
         userInput = userInput.trim();
         if (useImages.length > 0) {
             if (mjImageMode === "IMAGINE" && userInput == "") {
@@ -1325,7 +1327,7 @@ function _Chat() {
             </div>
 
             <div className={styles["chat-input-panel"]}>
-                <PromptHints prompts={promptHints} onPromptSelect={onPromptSelect}/>
+                {/*<PromptHints prompts={promptHints} onPromptSelect={onPromptSelect}/>*/}
 
                 <ChatActions
                     showPromptModal={() => setShowPromptModal(true)}
@@ -1367,7 +1369,7 @@ function _Chat() {
                             {[
                                 {name: Locale.Midjourney.ModeImagineUseImg, value: "IMAGINE"},
                                 {name: Locale.Midjourney.ModeBlend, value: "BLEND"},
-                                {name: Locale.Midjourney.ModeDescribe, value: "DESCRIBE"},
+                                // {name: Locale.Midjourney.ModeDescribe, value: "DESCRIBE"},
                             ].map((item, i) => (
                                 <label key={i}>
                                     <input
